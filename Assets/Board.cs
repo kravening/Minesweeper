@@ -114,6 +114,7 @@ public class Board : MonoBehaviour
 					for (int i = 0; i < GRIDY; i++) {
 						for (int j = 0; j < GRIDX; j++) {
 							if (gridArray [i, j, 2] == 1) {
+								gridArray [i, j, 0] = 1;
 								tileArray [processCoördinateToNumber (i, j)].GetComponent<SpriteRenderer> ().sprite = imageList [3]; // uncover mines
 								//GameOver
 							}
@@ -182,8 +183,6 @@ public class Board : MonoBehaviour
 						}
 					}
 					gridArray [j, i, 5] += 1;
-
-					Debug.Log ("NEXT!");
 				}
 			}
 		}
